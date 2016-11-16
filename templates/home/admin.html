@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽屉新热榜-聚合每日热门、搞笑、有趣资讯</title>
+    <link rel="icon" href="/sss/image/chouti.ico">
+    <link rel="stylesheet" href="{{ static_url('css/index.css') }}">
+</head>
+<body>
+    <div class="navigation_bar">
+        <div class="navigation_content">
+            <a href="http://localhost:63342/python%20file/test/test_006/chouti.html">
+                <img class="navigation_logo" src="/sss/image/00001.png">
+            </a>
+            <div class="navigation_menu">
+                <a class="navigation_selection navigation_selected" href="http://dig.chouti.com/all/hot/recent/1">
+                    全部
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/news/hot/1">
+                    42区
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/scoff/hot/1">
+                    段子
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/pic/hot/1">
+                    图片
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/tec/hot/1">
+                    挨踢1024
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/ask/hot/1">
+                    你问我答
+                </a>
+            </div>
+            <div class="navigation_search">
+                <input class="navigation_searchbox" type="text">
+                <a  class="navigation_searchbutton" href="baidu.com">
+                    <span class="navigation_searchbuttonicon"></span>
+                </a>
+            </div>
+            <div class="navigation_account">
+                <a class="navigation_selection navigation_useraction" href="/register">
+                    注册
+                </a>
+                <a class="navigation_selection navigation_useraction" href="/login">
+                    登录
+                </a>
+                <a class="navigation_selection navigation_loginaction hide" href="/login">
+                    {{username}}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main_bar">
+        <div class="main_content">
+            <div class="chatting_room">
+                <div class="chatting_roomtitle">
+                    公共聊天室
+                </div>
+            </div>
+            <div class="main_itembox">
+                <div class="main_item">
+                    <a class="main_selection" href="http://dig.chouti.com/all/hot/recent/1">
+                        <span class="main_selected">
+                            最热
+                        </span>
+                    </a>
+                    <a class="main_selection" href="http://dig.chouti.com/all/new/1">
+                            最新
+                    </a>
+                    <a class="main_selection" href="http://dig.chouti.com/all/man/1">
+                            人类发布
+                    </a>
+                    <a class="main_publish_buton navigation_useraction" href="/login">
+                        <span class="main_publish_button_icon"></span>
+                        <span class="main_publish_button_description">发布</span>
+                    </a>
+                    <a class="main_publish_buton navigation_loginaction hide" href="/publish">
+                        <span class="main_publish_button_icon"></span>
+                        <span class="main_publish_button_description">发布</span>
+                    </a>
+                    <a class="main_sortion" href="http://dig.chouti.com/all/hot/72hr/1">3天</a>
+                    <a class="main_sortion" href="http://dig.chouti.com/all/hot/24hr/1">24小时</a>
+                    <a class="main_sortion" href="http://dig.chouti.com/all/hot/recent/1">
+                        <span class="main_sortion_selected">排序</span>
+                    </a>
+                </div>
+                {% for item in news_list %}
+                    <div class="main_item">
+                        <div>
+                            <div class="main_picture">
+                                <img id="news_picture" src="{{item['picture']}}">
+                            </div>
+                            <div class="main_article">
+                                <a news_title="{{item['title']}}" news_content="{{item['content']}}" href="http://finance.sina.com.cn/stock/s/2016-06-30/doc-ifxtsatm1062620.shtml">
+                                    【{{item['title']}}】{{item['content']}}
+                                </a>
+                            </div>
+                            <input type="button" onclick="Is_Allowed_Published(this)" value="{{item['checked']}}">
+                        </div>
+                        <div class="function_block">
+                            <a class="main_function" href="javascript:;">
+                                <span class="main_functionicon1">
+                                </span>
+                                <span class="main_functionnum">
+                                    90
+                                </span>
+                            </a>
+                            <a class="main_function" href="javascript:;">
+                                <span class="main_functionicon2">
+                                </span>
+                                <span class="main_functionnum">
+                                    29
+                                </span>
+                            </a>
+                            <a class="main_function" href="javascript:;">
+                                <span class="main_functionicon3">
+                                </span>
+                                <span class="main_functionnum">
+                                    12
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                {% end %}
+                <div class="main_pagebox">
+                    {% raw str_page %}
+                </div>
+            </div>
+            <div class="foot_bar">
+                <div class="foot_band">
+                    <a class="foot_line" href="http://dig.chouti.com/help/about">
+                        关于我们
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/contact">
+                        联系我们
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/service">
+                        服务条款
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/privacy">
+                        隐私政策
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/tool">
+                        抽屉新热榜工具
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/download/model">
+                        下载客户端
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/feedback">
+                        意见与反馈
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/goodlink">
+                        友情链接
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://www.shouye.com/Index.do?method=show&pageId=44251&jid=xinrebang@gozap.com">
+                        公告
+                    </a>
+                    <a class="foot_line" href="http://dig.chouti.com/feed.xml">
+                        <img class="foot_rss" src="/sss/image/rss.gif">
+                    </a>
+                </div>
+                <div class="foot_band2">
+                    <img class="foot_rss" src="/sss/image/gozap.gif">
+                    <span class="foot_net">
+                        旗下站点 © 2016 chouti.com
+                    </span>
+                    <a class="foot_icp" href="http://www.miibeian.gov.cn/">
+                        京ICP备09053974号-3 京公网安备 110102004562
+                    </a>
+                </div>
+                <div class="foot_band3">
+                    版权所有：北京格致璞科技有限公司
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="{{ static_url('js/jquery-1.12.4.js') }}"></script>
+    <script>
+        {% raw login_action %}
+        {% raw user_action %}
+        function Is_Allowed_Published(self) {
+            if($(self).val()=='取消发布资格') {
+                $(self).val('同意此文章发布')
+            }else if ($(self).val()=='同意此文章发布'){
+                $(self).val('取消发布资格')
+                }else ({
+
+            })
+                title = $(self).prev().children().attr('news_title'),
+                content = $(self).prev().children().attr('news_content'),
+            $.ajax({
+//                action:"/Is_Allowed_Published",
+
+                url:"/asasasas",
+                type:'POST',
+                data: {"title":title,"content":content},
+                dataType: 'text',
+                success: function(data, statusText, xmlHttpRequest){
+                    console.log(data)
+                }
+            })
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends '../master/layout.html' %}
+{% block body %}
+    <form action="/publish" method="post" enctype="multipart/form-data">
+        <span>请输入欲提交的新闻题目</span>
+        <input type="text" name="title">
+        <span>请输入欲提交的新闻内容</span>
+        <input type="text" name="content">
+        <span>请上传相关的图片</span>
+        <input type="file" name="fafafa" />
+        <input type="submit" value="提交" />
+    </form>
+{% end %}
+{% block js %}
+    <script>
+        {% raw login_action %}
+        {% raw user_action %}
+	</script>
+{% end %}

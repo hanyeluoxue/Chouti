@@ -1,0 +1,81 @@
+{% extends '../master/layout.html' %}
+{% block body %}
+	<div class="pg-body">
+		<div class='account-container'>
+			<div class='header clearfix'>
+	            <div>
+	                <a href="/home/index">
+	                    <img src="images/logo_small.png">
+	                </a>
+	            </div>
+	        </div>
+	        <div class='body clearfix'>
+	            <div class='register left'>
+	                <div>
+	                    <h1 class='mb20'>注册新用户</h1>
+	                    <form id='Form' method='POST' action="register">
+	                        <div class='group'>
+	                        	<label class='tip'><span class="red">*</span>用户名：</label>
+	                        	<input type='text' require='true' label='用户名' Field='string' range='4-40' name='username' />
+	                        	<i class='i-name'></i>
+								<label class="input-error hide" error_flag="username">用户名格式错误</label>
+
+	                        </div>
+	                        <div class='group'>
+	                        	<label class='tip'><span class="red">*</span>手机号：</label>
+	                        	<input  type='text' require='true' label='手机号' mobile='true' name='telphone' />
+	                        	<i class='i-phone'></i>
+								<label class="input-error hide" error_flag="telphone">手机号格式错误</label>
+
+	                        </div>
+	                        <div class='group'>
+	                        	<label class='tip'><span class="red">*</span>登录密码：</label>
+	                        	<input  type='password' require='true'  label='登录密码' min-len='6' name='pwd' />
+	                        	<i class='i-pwd'></i>
+								<label class="input-error hide" error_flag="pwd">密码格式错误</label>
+
+	                        </div>
+	                        <div class='group'>
+	                        	<label class='tip'><span class="red">*</span>确认密码：</label>
+	                        	<input  type='password' require='true' label='确认密码' confirm-to='pwd' name='confirmpwd' />
+	                        	<i class='i-pwd'></i>
+								<label class="input-error hide" error_flag="confirmpwd">两次输入密码不一致</label>
+
+	                        </div>
+	                        <div class='group'>
+	                        	<label class='tip'><span class="red">*</span>验证码：</label>
+	                        	<input  type='text' require='true' label='验证码' style='width:80px;' name='checkcode' />
+                                <a style='width:125px;display:inline-block;'><img class='checkcode' onclick='ChangeCode();' id='imgCode' src='/checkcode' /></a>
+								<label class="input-error hide" error_flag="checkcode">验证码错误</label>
+	                        </div>
+	                        <div class='group font12'>
+	                        	<label class='tip'></label>
+	                        	<label style='width:246px;display: inline-block;'>
+                                    <input id='protocol' name='protocol' type='checkbox' checked='checked' /><span>我已阅读并同意<a href='#'>《用户注册协议》</a></span>
+                                </label>
+	                        </div>
+
+	                        <div class='group'>
+	                        	<label class='tip'></label>
+	                        	<input type='submit' class='submit' value='同意以上协议并注册' />
+	                        </div>
+	                    </form>
+	                </div>
+	            </div>
+	            <div class='more left'>
+	            	<div class='mg10 font12'>我已经注册，现在就<a href=“/login” class='ml5'>登录</a></div>
+	            	<div class='mg10 mt30'><img src="/statics/images/hongbao.jpg"></div>
+	            </div>
+	        </div>
+
+		</div>
+	</div>
+
+{% end %}
+
+
+{% block js %}
+    <script>
+        {% raw error_action %}
+	</script>
+{% end %}

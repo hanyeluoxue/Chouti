@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽屉新热榜-聚合每日热门、搞笑、有趣资讯</title>
+    <link rel="icon" href="/static/image/chouti.ico">
+    <link rel="stylesheet" href='/static/css/common.css'>
+    <link rel="stylesheet" href='/static/css/account.css'>
+    <link rel="stylesheet" href='/static/css/pg-header.css'>
+    <link rel="stylesheet" href='/static/css/index.css'>
+</head>
+<body>
+    <div class="navigation_bar">
+        <div class="navigation_content">
+            <a href="http://localhost:63342/python%20file/test/test_006/chouti.html">
+                <img class="navigation_logo" src="/static/image/00001.png">
+            </a>
+            <div class="navigation_menu">
+                <a class="navigation_selection navigation_selected" href="http://dig.chouti.com/all/hot/recent/1">
+                    全部
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/news/hot/1">
+                    42区
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/scoff/hot/1">
+                    段子
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/pic/hot/1">
+                    图片
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/tec/hot/1">
+                    挨踢1024
+                </a>
+                <a class="navigation_selection" href="http://dig.chouti.com/r/ask/hot/1">
+                    你问我答
+                </a>
+            </div>
+            <div class="navigation_search">
+                <input class="navigation_searchbox" type="text">
+                <a  class="navigation_searchbutton" href="baidu.com">
+                    <span class="navigation_searchbuttonicon"></span>
+                </a>
+            </div>
+            <div class="navigation_account">
+                <a class="navigation_selection navigation_useraction" href="/register">
+                    注册
+                </a>
+                <a class="navigation_selection navigation_useraction" href="/login">
+                    登录
+                </a>
+                <a class="navigation_selection navigation_loginaction hide" href="/login">
+                    {{username}}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main_bar">
+        <div class="main_content">
+            <div class="main_item">
+                {% block body %} {% endblock %}
+            </div>
+                <div class="foot_bar">
+                <div class="foot_band">
+                    <a class="foot_line" href="http://dig.chouti.com/help/about">
+                        关于我们
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/contact">
+                        联系我们
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/service">
+                        服务条款
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/privacy">
+                        隐私政策
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/tool">
+                        抽屉新热榜工具
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/download/model">
+                        下载客户端
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/feedback">
+                        意见与反馈
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://dig.chouti.com/help/goodlink">
+                        友情链接
+                    </a>
+                    <span class="foot_decollator">|</span>
+                    <a class="foot_line" href="http://www.shouye.com/Index.do?method=show&pageId=44251&jid=xinrebang@gozap.com">
+                        公告
+                    </a>
+                    <a class="foot_line" href="http://dig.chouti.com/feed.xml">
+                        <img class="foot_rss" src="/static/image/rss.gif">
+                    </a>
+                </div>
+                <div class="foot_band2">
+                    <img class="foot_rss" src="/static/image/gozap.gif">
+                    <span class="foot_net">
+                        旗下站点 © 2016 chouti.com
+                    </span>
+                    <a class="foot_icp" href="http://www.miibeian.gov.cn/">
+                        京ICP备09053974号-3 京公网安备 110102004562
+                    </a>
+                </div>
+                <div class="foot_band3">
+                    版权所有：北京格致璞科技有限公司
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src='/static/js/jquery-1.12.4.js'></script>
+    <script>
+        function ChangeCode() {
+                var code = document.getElementById('imgCode');
+                code.src += '?';
+            }
+    </script>
+    {% block js %} {% endblock %}
+</body>
+</html>

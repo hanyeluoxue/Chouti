@@ -1,0 +1,71 @@
+{% extends '../master/layout.html'　%}
+
+{% block body %}
+	<div class="account-container bg">
+		<div class='header clearfix'>
+	            <div>
+	                <a href="/home/index">
+	                    <img src="/static/image/chouti.ico">
+	                </a>
+	            </div>
+	        </div>
+	</div>
+
+	<div class='account-container mt30'>
+
+        <div class='body clearfix pd10' style='position: relative;'>
+        	<div class='logo left'>
+        		<img style='height:350px;' src="/static/images/login_logo.png" />
+        	</div>
+        	<div class='login left mt30'>
+        		<form id='Form' action='login' method='POST'>
+
+	        		<div class='group mt10'>
+	                	<label class='tip'><span class="red">*</span>用户名：</label>
+	                	<input type='text' require='true' label='用户名' Field='string' range='4-40' name='username' />
+	                	<i class='i-name'></i>
+						<label class="input-error hide" error_flag = 'username'>请输入用户名.</label>
+	                </div>
+
+	                <div class='group'>
+	                	<label class='tip'><span class="red">*</span>密码：</label>
+	                	<input  type='password' require='true'  label='密码' min-len='6' name='password' />
+	                	<i class='i-pwd'></i>
+						<label class="input-error hide" error_flag = 'pwd'>请输入密码.</label>
+	                </div>
+
+	                <div class='group'>
+	                	<label class='tip'><span class="red">*</span>验证码：</label>
+	                	<input  type='text' require='true' label='验证码' style='width:80px;' name='checkcode' />
+	                    <a style='width:125px;display:inline-block;'>
+                            <img class='checkcode' onclick='ChangeCode();' id='imgCode' src='/client/checkcode' />
+                        </a>
+						<label class="input-error hide" error_flag="checkcode">验证码错误.</label>
+						<label class="input-error hide" error_flag="wrong">用户名或密码不正确</label>
+	                </div>
+	                <div class='group font12 mb0'>
+	                	<label class='tip'></label>
+	                	<label style='width:246px;display: inline-block;'>
+	                        <input id='protocol' name='protocol' type='checkbox' checked='checked' />
+	                        <span>自动登录</span>
+	                        <span class='ml10'><a href='#'>忘记密码？</a></span>
+	                    </label>
+	                </div>
+	                <div class='group mt0'>
+	                	<label class='tip'></label>
+	                	<input type='submit' class='submit' value='登	录' />
+	                </div>
+	        	</form>
+
+	        	<div class='go-register'><a href='/account/register'>免费注册 >> </a></div>
+        	</div>
+        </div>
+
+	</div>
+
+{% endblock %}
+{#{% block js %}#}
+{#    <script>#}
+{#        {% raw error_action %}#}
+{#	</script>#}
+{#{% end %}#}
